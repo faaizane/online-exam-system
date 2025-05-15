@@ -31,7 +31,7 @@ const Sidebar = () => {
             <i className="fa-solid fa-clipboard-check mr-3"></i>
             Manage Exams
           </Link>
-          <Link to="/cheating" className={linkClass('/cheating')}>
+          <Link to="/reviewcheating" className={linkClass('/cheating')}>
             <i className="fa-solid fa-eye mr-3"></i>
             Review Cheating
           </Link>

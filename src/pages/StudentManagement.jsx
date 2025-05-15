@@ -11,7 +11,7 @@ export default function StudentManagement() {
       {/* Main Content */}
       <div className="ml-64 flex-1 bg-white">
         {/* Header - no horizontal spacing */}
-        <div className="bg-[#BAB3B3] p-4 flex justify-end items-center shadow">
+        <div className="bg-[#D9D9D9] p-4 flex justify-end items-center shadow">
           <div className="text-right">
             <h4 className="font-bold">Teacher Name</h4>
             <p className="text-sm text-gray-700">teacher@uetpeshawar.edu.pk</p>

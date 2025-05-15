@@ -4,8 +4,9 @@ import TDashboard from './pages/TDashboard';
 import StudentManagement from './pages/StudentManagement';
 import ManageExams from './pages/ManageExams';
 import CreateExam from './pages/CreateExam';
-// import ReviewCheating from './pages/reviewCheating';
-// import ViewResults from './pages/viewResults';
+import ReviewCheating from './pages/ReviewCheating';
+import ViewResults from './pages/ViewResults';
+import ExamSchedule from './pages/ExamSchedule';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
         <Route path="/studentmanagement" element={<StudentManagement />} />
         <Route path="/manageexams" element={<ManageExams />} />
         <Route path="/createexam" element={<CreateExam />} />
-        {/* <Route path="/reviewcheating" element={<ReviewCheating />} /> */}
-        {/* <Route path="/viewresults" element={<ViewResults />} /> */}
+        <Route path="/reviewcheating" element={<ReviewCheating />} />
+        <Route path="/viewresults" element={<ViewResults />} />
+        <Route path="/examschedule" element={<ExamSchedule />} />
 
       </Routes>
     </Router>
