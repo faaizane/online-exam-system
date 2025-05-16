@@ -9,22 +9,16 @@ export default function StudentManagement() {
   const handleFileImport = (event) => {
     const file = event.target.files[0];
     if (file) {
-      // You can handle file parsing/upload here
       console.log('Selected file:', file.name);
     }
   };
 
   return (
     <div className="flex min-h-screen bg-[#f9f9f9]">
-      {/* Sidebar */}
       <Sidebar />
-
-      {/* Main Content */}
       <div className="ml-64 flex-1">
-        {/* Reusable Header */}
         <Header />
 
-        {/* Page Content */}
         <div className="px-16 py-8">
           <h1 className="text-4xl font-bold text-[#002855] mb-6">Student Management</h1>
 
@@ -56,7 +50,7 @@ export default function StudentManagement() {
             </button>
           </div>
 
-          {/* Search Input */}
+          {/* Search Bar */}
           <div className="mb-6">
             <input
               type="text"
@@ -65,7 +59,7 @@ export default function StudentManagement() {
             />
           </div>
 
-          {/* Table Section */}
+          {/* Table */}
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
             <table className="w-full text-left text-sm">
               <thead className="bg-[#002855] text-white font-light">
@@ -87,7 +81,10 @@ export default function StudentManagement() {
                   <td className="p-4">7th</td>
                   <td className="p-4">A</td>
                   <td className="p-4">Computer Science</td>
-                  <td className="p-4">🔍 👤</td>
+                  <td className="p-4 flex items-center gap-3 text-lg">
+                    <i className="fa-solid fa-user-pen text-[#63E6BE] cursor-pointer hover:text-[#6ACFA4] transition"></i>
+                    <i className="fa-solid fa-user-slash text-red-600 cursor-pointer hover:text-red-800 transition"></i>
+                  </td>
                 </tr>
               </tbody>
             </table>
