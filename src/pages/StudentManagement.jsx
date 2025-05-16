@@ -1,39 +1,62 @@
-// src/pages/StudentManagement.jsx
 import React from 'react';
-import Sidebar from '../components/Sidebar';
+import { useNavigate } from 'react-router-dom';
+import Sidebar from '../components/TSidebar';
+import Header from '../components/THeader';
 
 export default function StudentManagement() {
+  const navigate = useNavigate();
+
+  const handleFileImport = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      // You can handle file parsing/upload here
+      console.log('Selected file:', file.name);
+    }
+  };
+
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen bg-[#f9f9f9]">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
-      <div className="ml-64 flex-1 bg-white">
-        {/* Header - no horizontal spacing */}
-        <div className="bg-[#D9D9D9] p-4 flex justify-end items-center shadow">
-          <div className="text-right">
-            <h4 className="font-bold">Teacher Name</h4>
-            <p className="text-sm text-gray-700">teacher@uetpeshawar.edu.pk</p>
-          </div>
-          <img src="/profile.png" alt="Profile" className="w-12 h-12 rounded-full ml-4" />
-        </div>
+      <div className="ml-64 flex-1">
+        {/* Reusable Header */}
+        <Header />
 
-        {/* Main Section with 64px side padding */}
-        <div className="px-16 py-6">
-          <h1 className="text-3xl font-bold mb-6">Student Management</h1>
+        {/* Page Content */}
+        <div className="px-16 py-8">
+          <h1 className="text-4xl font-bold text-[#002855] mb-6">Student Management</h1>
 
-          {/* Buttons */}
-          <div className="mb-4 flex gap-4">
-            <button className="bg-[#002855] text-white px-4 py-2 rounded hover:bg-[#001f47] transition">
-              Import CSV
-            </button>
-            <button className="bg-[#002855] text-white px-4 py-2 rounded hover:bg-[#001f47] transition">
+          {/* Button Row */}
+          <div className="flex gap-4 mb-4">
+            {/* Import CSV */}
+            <div>
+              <label
+                htmlFor="csv-upload"
+                className="cursor-pointer bg-[#002855] text-white px-4 py-2 rounded shadow-sm hover:shadow-md hover:bg-[#001f47] transition inline-block"
+              >
+                Import CSV
+              </label>
+              <input
+                type="file"
+                id="csv-upload"
+                accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                className="hidden"
+                onChange={handleFileImport}
+              />
+            </div>
+
+            {/* Add Student */}
+            <button
+              onClick={() => navigate('/add-student')}
+              className="bg-[#002855] text-white px-4 py-2 rounded shadow-sm hover:shadow-md hover:bg-[#001f47] transition"
+            >
               Add Students
             </button>
           </div>
 
-          {/* Search bar */}
+          {/* Search Input */}
           <div className="mb-6">
             <input
               type="text"
@@ -42,31 +65,33 @@ export default function StudentManagement() {
             />
           </div>
 
-          {/* Table */}
-          <table className="w-full text-left border">
-            <thead>
-              <tr className="bg-[#002855] text-white">
-                <th className="p-2">Registration No.</th>
-                <th className="p-2">Name</th>
-                <th className="p-2">Subject</th>
-                <th className="p-2">Semester</th>
-                <th className="p-2">Section</th>
-                <th className="p-2">Department</th>
-                <th className="p-2">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="text-black">
-                <td className="p-2">21pwbcsxxxx</td>
-                <td className="p-2">Student 1</td>
-                <td className="p-2">Web Programming</td>
-                <td className="p-2">7th</td>
-                <td className="p-2">A</td>
-                <td className="p-2">Computer Science</td>
-                <td className="p-2">🔍 👤</td>
-              </tr>
-            </tbody>
-          </table>
+          {/* Table Section */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-[#002855] text-white font-light">
+                <tr>
+                  <th className="p-4">Registration No.</th>
+                  <th className="p-4">Name</th>
+                  <th className="p-4">Subject</th>
+                  <th className="p-4">Semester</th>
+                  <th className="p-4">Section</th>
+                  <th className="p-4">Department</th>
+                  <th className="p-4">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="text-black text-md">
+                <tr className="hover:bg-gray-100 border-t border-gray-200 transition">
+                  <td className="p-4">21pwbcsxxxx</td>
+                  <td className="p-4">Student 1</td>
+                  <td className="p-4">Web Programming</td>
+                  <td className="p-4">7th</td>
+                  <td className="p-4">A</td>
+                  <td className="p-4">Computer Science</td>
+                  <td className="p-4">🔍 👤</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

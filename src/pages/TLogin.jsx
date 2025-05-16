@@ -6,11 +6,11 @@ const TLogin = () => {
       {/* Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-[1.5px]"
-        style={{ backgroundImage: "url('/bg-image.png')" }}
+        style={{ backgroundImage: "url('/bg-image.jpg')" }}
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-white/30" />
+      {/* Overlay
+      <div className="absolute inset-0 bg-white/30" /> */}
 
       {/* Login Container */}
 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[550px] h-[530px] rounded-[10px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.3)] bg-white z-10">
@@ -33,12 +33,12 @@ const TLogin = () => {
 <div className="pt-[70px] px-20 pb-[60px] bg-white text-center">
   <div className="mb-2 text-left">
     <label htmlFor="regno" className="block text-[13.5px] font-semibold mb-1">
-      Registration Number:
+      Teacher ID:
     </label>
     <input
       type="text"
-      id="regno"
-      placeholder="Reg num"
+      id="teacherid"
+      placeholder="Teacher ID"
       required
       className="w-full p-2 border-[2px] border-[#ccc] rounded-[5px] text-[13px]"
     />
